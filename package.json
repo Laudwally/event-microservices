@@ -1,0 +1,16 @@
+{
+  "name": "event-microservices",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:gateway": "npm run dev --workspace services/gateway",
+    "dev:worker": "npm run dev --workspace services/worker",
+    "dev:notifier": "npm run dev --workspace services/notifier"
+  }
+}
