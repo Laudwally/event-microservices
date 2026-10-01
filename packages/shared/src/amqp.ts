@@ -1,6 +1,8 @@
 import amqp, { type ChannelModel, type Channel, type ConsumeMessage } from "amqplib";
 import { EXCHANGE } from "./events.js";
 
+export type { Channel };
+
 export interface AmqpConnection {
   model: ChannelModel;
   channel: Channel;

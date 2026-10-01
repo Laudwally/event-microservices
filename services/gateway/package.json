@@ -7,7 +7,10 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
-    "lint": "tsc -p tsconfig.json --noEmit"
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test:pact:consumer": "tsx pact/consumer.pact.test.ts",
+    "test:pact:provider": "tsx pact/provider.pact.test.ts",
+    "test": "npm run test:pact:consumer && npm run test:pact:provider"
   },
   "dependencies": {
     "@event-demo/shared": "*",
@@ -15,6 +18,7 @@
     "uuid": "^11.0.4"
   },
   "devDependencies": {
+    "@pact-foundation/pact": "^17.1.4",
     "@types/express": "^4.17.21",
     "@types/node": "^22.10.2",
     "tsx": "^4.19.2",
